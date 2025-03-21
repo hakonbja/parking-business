@@ -10,13 +10,21 @@
         label="E-mail"
         type="email"
         required
+        @update:model-value="showErrorMsg = false"
       />
       <TextInput
         v-model="password"
         label="Password"
         type="password"
         required
+        @update:model-value="showErrorMsg = false"
       />
+      <div
+        v-if="showErrorMsg"
+        class="error-msg"
+      >
+        E-mail and password combination is invalid. Please try again.
+      </div>
       <BaseButton
         text="Login"
         @click="handleLogin"
@@ -44,15 +52,22 @@ export default defineComponent({
     return {
       email: '',
       password: '',
+      showErrorMsg: false,
     }
   },
   methods: {
     handleLogin: async function(): Promise<void> {
-      this.$refs.form.checkValidity();
+        this.showErrorMsg = false;
+        if (!this.$refs.form.checkValidity()) {
+        return
+      }
+
       const loginIsSuccesful = await userService.login(this.email, this.password);
 
       if (loginIsSuccesful) {
         router.push({ name: 'home'});
+      } else {
+        this.showErrorMsg = true;
       }
     }
   }
@@ -74,5 +89,9 @@ export default defineComponent({
 
 .form {
   display: contents;
+}
+
+.error-msg {
+  color: var(--var-c-error);
 }
 </style>
