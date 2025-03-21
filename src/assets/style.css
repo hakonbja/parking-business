@@ -1,16 +1,6 @@
 @import 'reset';
+@import 'colors';
 @import 'typography';
-
-:root {
-  --var-c-primary: #003366;
-  --var-c-secondary-yellow: #FFCC00;
-  --var-c-secondary-grey: #808080;
-  --var-c-accent-blue: #66B3FF;
-  --var-c-accent-green: #28A745;
-  --var-c-background: #F8F9FA;
-  --var-c-text: #333333;
-  --var-c-on-primary: #FFFFFF;
-}
 
 html {
   box-sizing: border-box;
