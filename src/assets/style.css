@@ -1,0 +1,61 @@
+@import 'reset';
+
+:root {
+  --var-c-primary: #003366;
+  --var-c-secondary-yellow: #FFCC00;
+  --var-c-secondary-grey: #808080;
+  --var-c-accent-blue: #66B3FF;
+  --var-c-accent-green: #28A745;
+  --var-c-background: #F8F9FA;
+  --var-c-text: #333333;
+  --var-c-on-dark: #FFFFFF;
+
+  --var-ff-headings: 'Montserrat', sans-serif;
+  --var-ff-body: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--var-ff-body);
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--var-ff-headings);
+  }
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  background-color: var(--var-c-background);
+  flex-grow: 1;
+}
+
+.container {
+  width: 100%;
+
+  @media screen and (min-width: 576px) {
+    width: 540px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 720px;
+  }
+
+  @media screen and (min-width: 992px) {
+    width: 960px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1140px;
+  }
+
+  @media screen and (min-width: 1400px) {
+    width: 1320px;
+  }
+}
