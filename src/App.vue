@@ -35,7 +35,7 @@ header {
   align-items: center;
   height: 60px;
   padding: 0 20px;
-  color: var(--var-c-on-dark);
+  color: var(--var-c-on-primary);
   background-color: var(--var-c-primary);
 }
 
