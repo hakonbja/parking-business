@@ -1,4 +1,5 @@
 @import 'reset';
+@import 'typography';
 
 :root {
   --var-c-primary: #003366;
@@ -8,19 +9,11 @@
   --var-c-accent-green: #28A745;
   --var-c-background: #F8F9FA;
   --var-c-text: #333333;
-  --var-c-on-dark: #FFFFFF;
-
-  --var-ff-headings: 'Montserrat', sans-serif;
-  --var-ff-body: 'Roboto', sans-serif;
+  --var-c-on-primary: #FFFFFF;
 }
 
 body {
   margin: 0;
-  font-family: var(--var-ff-body);
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--var-ff-headings);
-  }
 }
 
 #app {

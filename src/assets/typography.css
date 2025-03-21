@@ -1,0 +1,33 @@
+:root {
+  --var-ff-headings: 'Montserrat', sans-serif;
+  --var-ff-body: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: var(--var-ff-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--var-ff-headings);
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 20px;
+}
