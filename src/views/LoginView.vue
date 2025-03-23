@@ -85,6 +85,7 @@ export default defineComponent({
   margin-top: 28px;
   padding: 16px;
   background-color: var(--var-c-secondary-yellow);
+  border-radius: 12px;
 }
 
 .form {

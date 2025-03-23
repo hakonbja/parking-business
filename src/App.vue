@@ -1,6 +1,6 @@
 <template>
   <header>
-    <span>Parking business header</span>
+    <span>Parking Business</span>
 
     <BaseButton
       v-if="userIsLoggedIn"
@@ -17,7 +17,7 @@
     </div>
   </main>
   <footer>
-    The footer
+    <span>© 2025 Parking Business</span>
   </footer>
 </template>
 
@@ -60,8 +60,12 @@ header {
 }
 
 footer {
+  display: flex;
+  align-items: center;
+  justify-content: end;
   height: 40px;
   padding: 0 20px;
+  color: var(--var-c-accent-blue);
   background-color: var(--var-c-primary);
 }
 </style>
