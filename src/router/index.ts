@@ -1,7 +1,7 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import LoginView from '@/views/LoginView.vue'
-import { userService } from '@/services/userService';
+import { useUserStore } from '@/stores/user';
+import LoginView from '@/views/LoginView.vue';
+import { createRouter, createWebHashHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -20,9 +20,7 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to) => {
-  const isAuthenticated = await userService.isUserLoggedIn();
-
-  if (!isAuthenticated && to.name !== 'login') {
+  if (!useUserStore().isAuthenticated && to.name !== 'login') {
     return { name: 'login' };
   }
 

@@ -1,13 +1,15 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 import '@/assets/style.css';
-
-import App from './App.vue'
-import router from './router'
+import { createPinia } from 'pinia';
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import { userService } from './services/userService';
+import { useUserStore } from './stores/user';
 
 const app = createApp(App)
 
 app.use(createPinia())
-app.use(router)
+useUserStore().isAuthenticated = await userService.isUserLoggedIn();
 
+app.use(router)
 app.mount('#app')
