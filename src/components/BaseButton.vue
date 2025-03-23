@@ -1,6 +1,7 @@
 <template>
   <button
     class="button"
+    :class="`button--${size}`"
     @click="$emit('click')"
   >
     <slot></slot>
@@ -12,6 +13,13 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'BaseButton',
+  props: {
+    size: {
+      type: String,
+      required: false,
+      default: 'md',
+    },
+  },
   emits: ['click'],
 })
 </script>
@@ -20,9 +28,17 @@ export default defineComponent({
 .button {
   height: 40px;
   padding: 8px 8px;
-  font-size: 20px;
   color: var(--var-c-on-primary);
   background-color: var(--var-c-primary);
   border: none;
+  cursor: pointer;
+}
+
+.button--md {
+  font-size: 20px;
+}
+
+.button--sm {
+  font-size: 16px;
 }
 </style>
