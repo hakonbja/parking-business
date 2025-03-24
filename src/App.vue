@@ -111,11 +111,11 @@ export default defineComponent({
     }
 
     &:hover::after {
-      background-color: var(--var-c-secondary-yellow);
+      background-color: var(--var-c-accent-blue);
     }
 
     &.router-link-active::after {
-      background-color: var(--var-c-accent-blue);
+      background-color: var(--var-c-secondary-yellow);
     }
   }
 
