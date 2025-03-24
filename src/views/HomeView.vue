@@ -1,5 +1,5 @@
 <template>
-  <div class="parking-spaces-overview">
+  <div class="parking-spaces">
     <h1 class="parking-spaces__heading">Parking spaces overview</h1>
     <div
       v-if="parkingSpaces.length"
@@ -55,8 +55,11 @@ export default defineComponent({
 </script>
 
 <style>
-.parking-spaces__heading {
+.parking-spaces {
   margin-top: 28px;
+}
+
+.parking-spaces__heading {
   margin-bottom: 28px;
   text-align: center;
 }
