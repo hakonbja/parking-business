@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite --port 8000",
     "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview --port 8000",
+    "preview": "vite build & vite preview --port 8000",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix"
