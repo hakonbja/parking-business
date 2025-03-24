@@ -35,7 +35,6 @@ export default defineComponent({
   flex-direction: column-reverse;
   border: 2px solid var(--var-c-primary);
   background-color: var(--var-c-background);
-  border-radius: 12px;
   overflow: hidden;
 }
 
