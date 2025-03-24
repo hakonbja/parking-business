@@ -128,6 +128,7 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: end;
+  flex-shrink: 0;
   height: 40px;
   padding: 0 20px;
   color: var(--var-c-accent-blue);
