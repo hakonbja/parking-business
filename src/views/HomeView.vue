@@ -2,7 +2,7 @@
   <div class="parking-spaces">
     <h1 class="parking-spaces__heading">Parking spaces overview</h1>
     <div
-      v-if="parkingSpaces.length"
+      v-if="!isLoading"
       class="parking-spaces-overview__tiles"
     >
       <ParkingSpaceOverview
@@ -18,6 +18,7 @@
       name="Motorcycles"
       />
     </div>
+    <h2 v-else>Loading...</h2>
   </div>
 </template>
 
@@ -34,6 +35,7 @@ export default defineComponent({
   },
   data: function() {
     return {
+      isLoading: true,
       parkingSpaces: [] as Array<ParkingSpace>,
     };
   },
@@ -50,13 +52,17 @@ export default defineComponent({
   },
   mounted: async function() {
     this.parkingSpaces = await parkingService.getSpaces();
-  }
+    this.isLoading = false;
+  },
 });
 </script>
 
 <style>
 .parking-spaces {
   margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .parking-spaces__heading {

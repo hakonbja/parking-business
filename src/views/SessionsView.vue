@@ -2,6 +2,7 @@
   <div class="sessions-overview">
     <h1 class="sessions-overview__heading">Parking sessions overview</h1>
     <DataTable
+      v-if="!isLoading"
       :headers="headers"
       :data="parkingSessions"
       id-key="parkingSessionId"
@@ -29,6 +30,7 @@
         </BaseButton>
       </template>
     </DataTable>
+    <h2 v-else>Loading...</h2>
   </div>
 </template>
 
@@ -47,6 +49,7 @@ export default defineComponent({
   },
   data: function() {
     return {
+      isLoading: true,
       parkingSessions: [] as Array<ParkingSession>,
       headers: [
         {
@@ -79,9 +82,11 @@ export default defineComponent({
   },
   methods: {
     fetchParkingSessions: async function(): Promise<void> {
+      this.isLoading = true;
       this.parkingSessions = (await parkingService.getSessions()).parkingSessions.sort((a, b) => {
         return (a.isSessionEnded === b.isSessionEnded) ? 0 : a.isSessionEnded ? 1 : -1;
       });
+      this.isLoading = false;
     },
     parkingSpaceIdToLabel: function(id: 1|2|3): string {
       return this.parkingSpaceIdLabelMap[id]
