@@ -2,6 +2,7 @@
   <button
     class="button"
     :class="`button--${size}`"
+    :disabled="disabled"
     @click="$emit('click')"
   >
     <slot></slot>
@@ -19,12 +20,17 @@ export default defineComponent({
       required: false,
       default: 'md',
     },
+    disabled: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   emits: ['click'],
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .button {
   height: 40px;
   padding: 8px 8px;
@@ -32,13 +38,19 @@ export default defineComponent({
   background-color: var(--var-c-primary);
   border: none;
   cursor: pointer;
+
+  &--md {
+    font-size: 20px;
+  }
+
+  &--sm {
+    font-size: 16px;
+  }
+
+  &:disabled {
+    cursor: auto;
+    background-color: grey;
+  }
 }
 
-.button--md {
-  font-size: 20px;
-}
-
-.button--sm {
-  font-size: 16px;
-}
 </style>
