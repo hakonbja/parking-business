@@ -95,8 +95,11 @@ export default defineComponent({
       await parkingService.endSession(id);
       this.fetchParkingSessions();
     },
-    formatDate: function(date: string): string {
-      return new Date(date).toLocaleDateString()
+    formatDate: function(date: string | null): string {
+      if (date === null) {
+        return 'n/a';
+      }
+      return new Date(date).toLocaleString()
     }
   },
   mounted: async function(): Promise<void> {
