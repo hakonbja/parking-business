@@ -57,6 +57,10 @@ export default defineComponent({
           label: 'Type',
         },
         {
+          key: 'vehicleLicensePlate',
+          label: 'License plate',
+        },
+        {
           key: 'sessionStartedAt',
           label: 'Start date',
         },
