@@ -42,11 +42,6 @@ export default defineComponent({
       required: false,
       default: () => [],
     },
-    idKey: {
-      type: String,
-      required: false,
-      default: 'id',
-    },
   },
   computed: {
     orderedData: function(): Array<Array<DataTableCell>> {

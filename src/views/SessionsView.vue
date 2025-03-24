@@ -5,7 +5,6 @@
       v-if="!isLoading"
       :headers="headers"
       :data="parkingSessions"
-      id-key="parkingSessionId"
     >
       <template v-slot:parkingSpaceId="slotProps">
         {{ parkingSpaceIdToLabel(slotProps.value) }}
